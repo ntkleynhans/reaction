@@ -5,6 +5,7 @@ import { createStore } from 'redux';
 import App from './components/App';
 import appReducer from './reducers';
 import PubSub from './pubsub';
+import { newMessage } from './actions/messages';
 import './index.css';
 
 const store = createStore(appReducer);
@@ -22,8 +23,8 @@ pubsub.addListener({
 });
 
 setTimeout(() => {
-  pubsub.publish({ type: 'foo', value: 'bar' });
-}, 1000)
+  pubsub.publish(newMessage('Hello World!'));
+}, 1000);
 
 ReactDOM.render(
   <Provider store={store}>
