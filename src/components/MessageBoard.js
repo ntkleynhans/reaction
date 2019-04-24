@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const MessageBoard = ({ items }) => {
+const MessageBoard = ({ items, username }) => {
   return (
     <div>
     {
@@ -10,7 +10,7 @@ const MessageBoard = ({ items }) => {
           <div key={item.id} style={{ padding: '10px' }}>
             <div className="card text-left" >
               <div className="card-body">
-                <h5 className="card-title">Username</h5>
+                <h5 className="card-title">{ username }</h5>
                 <h6 className="card-subtitle mb-2 text-muted">{ new Date(item.timestamp).toLocaleString()}</h6>
                 <p className="card-text">{ item.text }</p>
               </div>
@@ -23,5 +23,5 @@ const MessageBoard = ({ items }) => {
   )
 }
 
-export default connect(({ messages: { items } }) => ({ items }), ({}))(MessageBoard);
+export default connect(({ messages: { items }, username: { username } }) => ({ items, username }), ({}))(MessageBoard);
 

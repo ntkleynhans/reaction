@@ -25,9 +25,9 @@ pubsub.addListener({
   }
 });
 
-setTimeout(() => {
-  pubsub.publish(newMessage('Hello World!'));
-}, 1000);
+//setTimeout(() => {
+//  pubsub.publish(newMessage('Hello World!'));
+//}, 1000);
 
 ReactDOM.render(
   <Provider store={store}>
