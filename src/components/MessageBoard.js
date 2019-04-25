@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import CreateReaction from './CreateReaction';
 
 const MessageBoard = ({ items }) => {
   return (
@@ -15,6 +16,7 @@ const MessageBoard = ({ items }) => {
                 <p className="card-text">{ item.text }</p>
               </div>
             </div>
+            <CreateReaction />
           </div>
         )
       })
