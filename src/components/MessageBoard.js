@@ -16,7 +16,7 @@ const MessageBoard = ({ items }) => {
                 <p className="card-text">{ item.text }</p>
               </div>
             </div>
-            <CreateReaction />
+            <CreateReaction messageId={item.id} />
           </div>
         )
       })

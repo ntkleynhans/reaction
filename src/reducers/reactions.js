@@ -1,6 +1,6 @@
-import { REACTIONS_EMOJIS } from '../actions/types';
+import { REACTION_EMOJIS } from '../actions/types';
 
-const REACTION_TYPES = REACTIONS_EMOJIS.map(REACTIONS_EMOJI => REACTIONS_EMOJI.type);
+const REACTION_TYPES = REACTION_EMOJIS.map(REACTION_EMOJI => REACTION_EMOJI.type);
 
 const DEFAULT_REACTIONS = {
 };
@@ -15,9 +15,9 @@ const reactionsReducer = ( state = DEFAULT_REACTIONS, action) => {
         ...state, [messageId] : [ ...messageReactions, action.item]
       }
     }
-    return { ..state, [messageId]: [action.item]}
+    return { ...state, [messageId]: [action.item]}
   }
   return state;
 }
 
-export defautl reactionsReducer;
+export default reactionsReducer;
