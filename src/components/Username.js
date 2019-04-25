@@ -20,8 +20,8 @@ class Username extends Component {
   render() {
     return(
       <div>
-        <div className="card">
-          <div className="card-header">
+        <div className="card rounded">
+          <div className="card-header bg-warning">
             Enter username to continue
           </div>
           <div className="card-body">

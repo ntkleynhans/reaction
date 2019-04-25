@@ -21,6 +21,8 @@ pubsub.addListener({
   message: messageObject => {
     const { message, channel } = messageObject;
     console.log('Message Received:', message, ' from channel:', channel);
+    let audio = document.getElementById('audioPlayer');
+    audio.play();
     store.dispatch(message);
   }
 });
